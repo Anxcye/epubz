@@ -10,7 +10,8 @@ import '../schema/opf/epub_metadata_meta.dart';
 
 class BookCoverReader {
   static Future<images.Image?> readBookCover(EpubBookRef bookRef) async {
-    EpubManifestItem? coverManifestItem = bookRef.Schema!.Package!.Manifest!.Items!.firstWhereOrNull(
+    EpubManifestItem? coverManifestItem =
+        bookRef.Schema!.Package!.Manifest!.Items!.firstWhereOrNull(
       (i) => i.Properties == "cover-image",
     );
 
@@ -34,8 +35,7 @@ class BookCoverReader {
     }
 
     if (coverManifestItem == null) {
-      throw Exception(
-          'Incorrect EPUB manifest');
+      throw Exception('Incorrect EPUB manifest');
     }
 
     EpubByteContentFileRef? coverImageContentFileRef;
