@@ -246,7 +246,7 @@ class NavigationReader {
           result.Id = attributeValue;
           break;
         case 'href':
-          result.Source = p.join(_tocFileEntryPath!, attributeValue);
+          result.Source = p.normalize(p.join(_tocFileEntryPath!, attributeValue));
           break;
       }
     });
