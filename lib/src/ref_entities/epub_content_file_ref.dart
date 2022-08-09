@@ -64,14 +64,22 @@ abstract class EpubContentFileRef {
   }
 
   Future<List<int>> readContentAsBytes() async {
-    var contentFileEntry = getContentFileEntry();
-    var content = openContentStream(contentFileEntry);
-    return content;
+    try {
+      var contentFileEntry = getContentFileEntry();
+      var content = openContentStream(contentFileEntry);
+      return content;
+    } catch (_) {
+      return [];
+    }
   }
 
   Future<String> readContentAsText() async {
-    var contentStream = getContentStream();
-    var result = convert.utf8.decode(contentStream);
-    return result;
+    try {
+      var contentStream = getContentStream();
+      var result = convert.utf8.decode(contentStream);
+      return result;
+    } catch (_) {
+      return "";
+    }
   }
 }
