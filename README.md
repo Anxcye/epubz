@@ -1,22 +1,26 @@
-# epubx
+# epubz
 
-It package is [dart-epub](https://github.com/orthros/dart-epub) fork
+This package is a fork of [epubx](https://github.com/ScerIO/epubx.dart)
 
 [Flutter UI implementation](https://pub.dev/packages/epub_view)
 
 Epub Reader and Writer for Dart inspired by [this fantastic C# Epub Reader](https://github.com/versfx/EpubReader)
 
-This does not rely on the ```dart:io``` package in any way, so it is avilable for both desktop and web-based implementations
+This does not rely on the `dart:io` package in any way, so it is avilable for both desktop and web-based implementations
 
-[![pub package](https://img.shields.io/pub/v/epubx.svg)](https://pub.dartlang.org/packages/epubx)
+<!-- [![pub package](https://img.shields.io/pub/v/epubx.svg)](https://pub.dartlang.org/packages/epubx) -->
+
 ## Installing
-Add the package to the ```dependencies``` section of your pubspec.yaml
+
+Add the package to the `dependencies` section of your pubspec.yaml
+
 ```
 dependencies:
-  epubx: any
+  epubz: any
 ```
 
 ## Example
+
 ```dart
 
 //Get the epub into memory somehow
@@ -28,7 +32,7 @@ List<int> bytes = await targetFile.readAsBytes();
 
 // Opens a book and reads all of its content into memory
 EpubBook epubBook = await EpubReader.readBook(bytes);
-            
+
 // COMMON PROPERTIES
 
 // Book's title
@@ -43,14 +47,14 @@ List<String> authors = epubBook.AuthorList;
 // Book's cover image (null if there is no cover)
 Image coverImage = epubBook.CoverImage;
 
-            
+
 // CHAPTERS
 
 // Enumerating chapters
 epubBook.Chapters.forEach((EpubChapter chapter) {
   // Title of chapter
   String chapterTitle = chapter.Title;
-              
+
   // HTML content of current chapter
   String chapterHtmlContent = chapter.HtmlContent;
 
@@ -58,13 +62,13 @@ epubBook.Chapters.forEach((EpubChapter chapter) {
   List<EpubChapter> subChapters = chapter.SubChapters;
 });
 
-            
+
 // CONTENT
 
 // Book's content (HTML files, stylesheets, images, fonts, etc.)
 EpubContent bookContent = epubBook.Content;
 
-            
+
 // IMAGES
 
 // All images in the book (file name is the key)
@@ -129,6 +133,6 @@ navigation.Head.Metadata.forEach((EpubNavigationHeadMeta meta){
 // Writing Data
 var written = await EpubWriter.writeBook(epubBook);
 
-// You can even re-read the book into a new object! 
+// You can even re-read the book into a new object!
 var bookRoundTrip = await EpubReader.readBook(written);
 ```

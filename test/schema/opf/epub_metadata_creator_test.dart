@@ -1,6 +1,6 @@
 library epubreadertest;
 
-import 'package:epubx/src/schema/opf/epub_metadata_creator.dart';
+import 'package:epubz/src/schema/opf/epub_metadata_creator.dart';
 import 'package:test/test.dart';
 
 main() async {

@@ -1,11 +1,11 @@
 library epubreadertest;
 
-import 'package:epubx/epub.dart';
-import 'package:epubx/src/entities/epub_schema.dart';
-import 'package:epubx/src/schema/navigation/epub_navigation_doc_author.dart';
-import 'package:epubx/src/schema/navigation/epub_navigation_doc_title.dart';
-import 'package:epubx/src/schema/opf/epub_guide.dart';
-import 'package:epubx/src/schema/opf/epub_version.dart';
+import 'package:epubz/epubz.dart';
+import 'package:epubz/src/entities/epub_schema.dart';
+import 'package:epubz/src/schema/navigation/epub_navigation_doc_author.dart';
+import 'package:epubz/src/schema/navigation/epub_navigation_doc_title.dart';
+import 'package:epubz/src/schema/opf/epub_guide.dart';
+import 'package:epubz/src/schema/opf/epub_version.dart';
 import 'package:test/test.dart';
 
 main() async {

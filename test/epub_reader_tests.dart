@@ -5,7 +5,7 @@ import 'dart:io' as io;
 import 'package:path/path.dart' as path;
 import 'package:test/test.dart';
 
-import 'package:epubx/epub.dart';
+import 'package:epubz/epubz.dart';
 
 main() async {
   String fileName = "hittelOnGoldMines.epub";
